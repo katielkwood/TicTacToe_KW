@@ -51,16 +51,29 @@ public class TicTacToeTest {
 	
 	@Test
 	public void testGameIsNotOverAfterTheFirstMark() {
-		assertTrue(false);
+		TicTacToe t = new TicTacToe();
+		Random randInt = new Random();
+		int row = randInt.nextInt(3);
+		int col = randInt.nextInt(3);
+		t.setMark(row, col, 'X');
+		assertEquals(false, t.gameOver());
 	}
 	
 	@Test
 	public void testGameIsWonByXHorizontallyAcrossTopRow() {
-		assertTrue(false);
+		TicTacToe t = new TicTacToe();
+		t.setMark(0, 0, 'X');
+		t.setMark(0, 1, 'X');
+		t.setMark(0, 2, 'X');
+		assertEquals(true, t.gameWonByX());
 	}
 	
 	@Test
 	public void testGameIsOverByTieIfAllLocationsAreFilled() {
-		assertTrue(false);
+		TicTacToe t = new TicTacToe();
+		t.setMark(0, 0, 'X'); t.setMark(0, 1, 'O'); t.setMark(0, 2, 'X');
+		t.setMark(1, 0, 'X'); t.setMark(1, 1, 'O'); t.setMark(1, 2, 'X');
+		t.setMark(2, 0, 'O'); t.setMark(2, 1, 'X'); t.setMark(2, 2, 'O');
+		assertEquals(true, t.tieGame());
 	}	
 }
