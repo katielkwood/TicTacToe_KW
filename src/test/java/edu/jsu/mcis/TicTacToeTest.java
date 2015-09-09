@@ -27,14 +27,15 @@ public class TicTacToeTest {
 	@Test
 	public void testMarkXInUpperRightCorner() {
 		TicTacToe t = new TicTacToe();
-		t.setMark(0, 2, 'X');
+		t.setMark(0, 2);
 		assertEquals('X', t.getMark(0, 2)); 
 	}
 	
 	@Test
 	public void testMarkOInBottomLeftCorner() {
 		TicTacToe t = new TicTacToe();
-		t.setMark(2, 0, 'O');
+		t.setMark(0, 0);
+		t.setMark(2, 0);
 		assertEquals('O', t.getMark(2, 0));
 	}
 	
@@ -44,9 +45,9 @@ public class TicTacToeTest {
 		Random randInt = new Random();
 		int row = randInt.nextInt(3);
 		int col = randInt.nextInt(3);
-		t.setMark(row, col, 'O');
-		t.setMark(row, col, 'X');
-		assertEquals('O', t.getMark(row, col));
+		t.setMark(row, col);
+		t.setMark(row, col);
+		assertEquals('X', t.getMark(row, col));
 	}
 	
 	@Test
@@ -55,25 +56,27 @@ public class TicTacToeTest {
 		Random randInt = new Random();
 		int row = randInt.nextInt(3);
 		int col = randInt.nextInt(3);
-		t.setMark(row, col, 'X');
+		t.setMark(row, col);
 		assertEquals(false, t.gameOver());
 	}
 	
 	@Test
 	public void testGameIsWonByXHorizontallyAcrossTopRow() {
 		TicTacToe t = new TicTacToe();
-		t.setMark(0, 0, 'X');
-		t.setMark(0, 1, 'X');
-		t.setMark(0, 2, 'X');
-		assertEquals(true, t.gameWonByX());
+		t.setMark(0, 0); //X
+		t.setMark(1, 1); //O
+		t.setMark(0, 1); //X
+		t.setMark(1, 0); //O
+		t.setMark(0, 2); //x
+		assertEquals("Player X", t.getWinner());
 	}
 	
 	@Test
 	public void testGameIsOverByTieIfAllLocationsAreFilled() {
 		TicTacToe t = new TicTacToe();
-		t.setMark(0, 0, 'X'); t.setMark(0, 1, 'O'); t.setMark(0, 2, 'X');
-		t.setMark(1, 0, 'X'); t.setMark(1, 1, 'O'); t.setMark(1, 2, 'X');
-		t.setMark(2, 0, 'O'); t.setMark(2, 1, 'X'); t.setMark(2, 2, 'O');
+		t.setMark(0, 0); t.setMark(0, 1); t.setMark(0, 2);
+		t.setMark(1, 0); t.setMark(1, 1); t.setMark(1, 2);
+		t.setMark(2, 0); t.setMark(2, 1); t.setMark(2, 2);
 		assertEquals(true, t.tieGame());
 	}	
 }

@@ -5,6 +5,7 @@ public class TicTacToe {
 	//private TicTacToe t;
 	//public enum Mark {XMARK, OMARK, EMPTY}
 	private char[][] board = new char[3][3];
+	private int moveCounter;
 	
 	public TicTacToe(){
 		for (int row = 0; row < 3; row++){
@@ -12,17 +13,22 @@ public class TicTacToe {
 				board[row][col] = ' ';
 			}
 		}
+		moveCounter = 0;
 	}
 	public char getMark(int row, int col){
 		return board[row][col];
 	}
 	
-	public void setMark(int row, int col, char mark){
+	public void setMark(int row, int col){
 		if (board[row][col] == ' '){
-			board[row][col] = mark;
+			if(moveCounter%2 == 0){
+				board[row][col] = 'X';
+			}
+			else board[row][col] = 'O';
 		}
+		moveCounter++;
 	}
-	
+	/*
 	public boolean gameWonByX(){
 		boolean result = false;
 		for (int row = 0; row < 3; row++){
@@ -71,6 +77,30 @@ public class TicTacToe {
 			result = true;
 		}
 		return result;
+	}*/
+	public boolean gameWon(){
+		boolean result = false;
+		for (int row = 0; row < 3; row++){
+			if (getMark(row, 0) == getMark(row, 1) && getMark(row, 1) == getMark(row, 2) &&
+				getMark(row, 0) != ' '){
+				result = true;
+			}
+		}
+		for (int col = 0; col < 3; col++){
+			if (getMark(0, col) == getMark(1, col) && getMark(1, col) == getMark(2, col) &&
+				getMark(0, col) != ' '){
+				result = true;
+			}
+		}
+		if (getMark(0, 0) == getMark(1, 1) && getMark(1, 1) == getMark(2, 2) && 
+			getMark(0, 0) != ' '){
+			result = true;
+		}
+		else if (getMark(2, 0) == getMark(1, 1) && getMark(1, 1) == getMark(0, 2) &&
+					getMark(2, 0) != ' '){
+			result = true;
+		}
+		return result;
 	}
 	public boolean tieGame(){
 		boolean result = true;
@@ -86,10 +116,7 @@ public class TicTacToe {
 	
 	public boolean gameOver(){
 		boolean result;
-		if (gameWonByX() == true){
-			result = true;
-		}
-		else if (gameWonByO() == true){
+		if (gameWon() == true){
 			result = true;
 		}
 		else if (tieGame() == true){
@@ -99,6 +126,17 @@ public class TicTacToe {
 			result = false;
 		}
 		return result;
+	}
+	
+	public String getWinner(){
+		String winner;
+		if (gameWon() == true){
+			if (moveCounter%2 == 1){
+				winner = new String("Player X");
+			}
+			else winner = new String("Player O");
+		}
+		return winner;
 	}
 
 	public static void main(String[] args) {
