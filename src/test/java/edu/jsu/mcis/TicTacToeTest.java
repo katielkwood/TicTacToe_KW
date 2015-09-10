@@ -6,13 +6,7 @@ import java.util.Random;
 
 public class TicTacToeTest {
 
-	//private TicTacToe t;
-	//public enum Mark {XMARK, OMARK, EMPTY};
-	
-	/*@Before 
-	public void setUp(){
-		TicTacToe t = new TicTacToe();
-	}*/
+
 	
 	@Test
 	public void testInitialBoardIsEmpty() {
