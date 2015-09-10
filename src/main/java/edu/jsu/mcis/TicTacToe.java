@@ -1,10 +1,10 @@
 package edu.jsu.mcis;
 
 import java.io.*;
+import java.util.Scanner;
 public class TicTacToe {
 
-	//private TicTacToe t;
-	//public enum Mark {XMARK, OMARK, EMPTY}
+	
 	private char[][] board = new char[3][3];
 	private int moveCounter;
 	
@@ -32,56 +32,7 @@ public class TicTacToe {
 			}
 		}
 	}
-	/*
-	public boolean gameWonByX(){
-		boolean result = false;
-		for (int row = 0; row < 3; row++){
-			if (getMark(row, 0) == getMark(row, 1) && getMark(row, 1) == getMark(row, 2) && 
-				getMark(row, 0) == 'X'){
-				result = true;
-			}
-		}
-		for (int col = 0; col < 3; col++){
-			if (getMark(0, col) == getMark(1, col) && getMark(1, col) == getMark(2, col) &&
-				getMark(0, col) == 'X'){
-				result = true;
-			}
-		}
-		if (getMark(0, 0) == getMark(1, 1) && getMark(1, 1) == getMark(2, 2) && 
-			getMark(0, 0) == 'X'){
-			result = true;
-		}
-		else if (getMark(2, 0) == getMark(1, 1) && getMark(1, 1) == getMark(0, 2) &&
-					getMark(2, 0) == 'X'){
-			result = true;
-		}
-		return result;
-	}
 	
-	public boolean gameWonByO(){
-		boolean result = false;
-		for (int row = 0; row < 3; row++){
-			if (getMark(row, 0) == getMark(row, 1) && getMark(row, 1) == getMark(row, 2) && 
-				getMark(row, 0) == 'O'){
-				result = true;
-			}
-		}
-		for (int col = 0; col < 3; col++){
-			if (getMark(0, col) == getMark(1, col) && getMark(1, col) == getMark(2, col) &&
-				getMark(0, col) == 'O'){
-				result = true;
-			}
-		}
-		if (getMark(0, 0) == getMark(1, 1) && getMark(1, 1) == getMark(2, 2) && 
-			getMark(0, 0) == 'O'){
-			result = true;
-		}
-		else if (getMark(2, 0) == getMark(1, 1) && getMark(1, 1) == getMark(0, 2) &&
-					getMark(2, 0) == 'O'){
-			result = true;
-		}
-		return result;
-	}*/
 	public boolean gameWon(){
 		boolean result = false;
 		for (int row = 0; row < 3; row++){
@@ -150,7 +101,25 @@ public class TicTacToe {
 	}
 
 	public static void main(String[] args) {
+		TicTacToe t = new TicTacToe();
 		System.out.println("Welcome to Tic-Tac-Toe");
+		while (t.gameOver() == false){
+			System.out.println("   (0)(1)(2)");
+			System.out.println("(0)["+t.board[0][0]+"]["+t.board[0][1]+"]["+t.board[0][2]+"]");
+			System.out.println("(1)["+t.board[1][0]+"]["+t.board[1][1]+"]["+t.board[1][2]+"]");
+			System.out.println("(2)["+t.board[2][0]+"]["+t.board[2][1]+"]["+t.board[2][2]+"]");
+			if (t.moveCounter%2 == 0){
+				System.out.println("Player X");
+			}
+			else {System.out.println("Player O");}
+			System.out.println("Enter the row number of the space you want to play");
+			Scanner inputScanner = new Scanner(System.in);
+			int rowNum = inputScanner.nextInt();
+			System.out.println("Enter the column number of the space you want to play");
+			int colNum = inputScanner.nextInt();
+			t.setMark(rowNum, colNum);
+		}
+		System.out.println(t.getGameResult());
 	}
 	
 	

@@ -14,12 +14,10 @@ public class TicTacToeKeywords {
 	
 	public char getMark(int row, int col) {
 		return t.getMark(row, col);
-		//return m;
 	}
-    
-    /*
-	public String getWinner() {
-		String result = t.getGameResult();
+
+public String getWinner() {
+	String result = t.getGameResult();
 		if (result == "Player X wins"){
 			return "X";
 		}
@@ -29,26 +27,6 @@ public class TicTacToeKeywords {
 		else if (result == "TIE"){
 			return "TIE";
 		}
-		else if (result == "still playing"){ 
-			return "still playing";
-		}
-		else {return "";}
-	}
-}
-*/
-public String getWinner() {
-	String result = t.getGameResult();
-		if (result == "Player X wins"){
-			return "X";}
-		
-		else if (result == "Player O wins"){
-			return "O";}
-		else if (result == "TIE"){
-			return "TIE";}
 		else{return "";}
-		//return "X";
-		//return "O";
-		//return "TIE";
-		//return "";
 	}
 }
