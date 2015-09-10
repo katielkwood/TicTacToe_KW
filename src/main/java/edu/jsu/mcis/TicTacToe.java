@@ -1,5 +1,6 @@
 package edu.jsu.mcis;
 
+import java.io.*;
 public class TicTacToe {
 
 	//private TicTacToe t;
@@ -20,13 +21,16 @@ public class TicTacToe {
 	}
 	
 	public void setMark(int row, int col){
-		if (board[row][col] == ' '){
+		if (/*gameOver() == false && */board[row][col] == ' '){
 			if(moveCounter%2 == 0){
 				board[row][col] = 'X';
+				moveCounter++;
 			}
-			else board[row][col] = 'O';
+			else {
+				board[row][col] = 'O';
+				moveCounter++;	
+			}
 		}
-		moveCounter++;
 	}
 	/*
 	public boolean gameWonByX(){
@@ -128,19 +132,25 @@ public class TicTacToe {
 		return result;
 	}
 	
-	public String getWinner(){
-		String winner;
-		if (gameWon() == true){
-			if (moveCounter%2 == 1){
-				winner = new String("Player X");
+	public String getGameResult(){
+		String result ="";
+		if (gameOver() == true){
+			if (gameWon() == true){
+				if (moveCounter%2 == 1){
+					result = "Player X wins";
+				}
+				else {result = "Player O wins";}
 			}
-			else winner = new String("Player O");
+			else if(tieGame() == true){result = "TIE";}
+			else{result = "error";}
 		}
-		return winner;
+		else {result = "still playing";}
+		
+		return result;
 	}
 
 	public static void main(String[] args) {
-		
+		System.out.println("Welcome to Tic-Tac-Toe");
 	}
 	
 	

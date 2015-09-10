@@ -68,7 +68,7 @@ public class TicTacToeTest {
 		t.setMark(0, 1); //X
 		t.setMark(1, 0); //O
 		t.setMark(0, 2); //x
-		assertEquals("Player X", t.getWinner());
+		assertEquals("Player X wins", t.getGameResult());
 	}
 	
 	@Test
