@@ -2,10 +2,10 @@ import edu.jsu.mcis.*;
 
 public class TicTacToeKeywords {
 
-	private TicTacToe t;
+	private TicTacToePanel t;
 	
 	public void startNewGame() {
-		t = new TicTacToe();
+		t = new TicTacToePanel();
 	}
 	
 	public void markLocation(int row, int col) {

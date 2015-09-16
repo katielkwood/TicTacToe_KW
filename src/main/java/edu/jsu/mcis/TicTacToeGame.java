@@ -5,7 +5,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
 import java.util.Scanner;
-public class TicTacToe {
+public class TicTacToeGame {
 
 	
 	/*private char[][] board = new char[3][3];
