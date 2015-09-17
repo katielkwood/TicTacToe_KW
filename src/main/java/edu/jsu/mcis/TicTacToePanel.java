@@ -58,7 +58,6 @@ public class TicTacToePanel extends JPanel{
 		updateLabel(result);
 	}
 	
-	
 	private boolean gameWon(){
 		boolean result = false;
 		for (int row = 0; row < 3; row++){
@@ -138,18 +137,6 @@ public class TicTacToePanel extends JPanel{
 				label.setText("Player 0, place your mark.");
 			}
 		}
-		/*else if(result == GameResult.XWIN){
-			label.setText("Player X wins!");
-		}
-		else if(result == GameResult.OWIN){
-			label.setText("Player O wins!");
-		} 
-		else if(result == GameResult.TIE){
-			label.setText("TIE");
-		}
-		else{
-			label.setText("Error");
-		}*/
 	}
 	private String dialogMessage(GameResult result){
 		String message = "";
@@ -221,99 +208,72 @@ public class TicTacToePanel extends JPanel{
 					setMark(0, 0);
 					Location00.setText(getMark(0, 0));
 					result = getGameResult();
-					if (result == GameResult.STILLPLAYING){
-						//updateLabel(result);
-					}
-					else {
-						JOptionPane.showMessageDialog(buttonPanel, dialogMessage(result));
+					if (result != GameResult.STILLPLAYING){
+						JOptionPane.showMessageDialog(buttonPanel, dialogMessage(result), "Game Over", JOptionPane.INFORMATION_MESSAGE);
 					}
 				}
 				else if (event.getSource() == Location01){
 					setMark(0, 1);
 					Location01.setText(getMark(0, 1));
 					result = getGameResult();
-					if (result == GameResult.STILLPLAYING){
-						updateLabel(result);
-					}
-					else {
-						JOptionPane.showMessageDialog(buttonPanel, dialogMessage(result));
+					if (result != GameResult.STILLPLAYING){
+						JOptionPane.showMessageDialog(buttonPanel, dialogMessage(result), "Game Over", JOptionPane.INFORMATION_MESSAGE);
 					}
 				}
 				else if (event.getSource() == Location02){
 					setMark(0, 2);
 					Location02.setText(getMark(0, 2));
 					result = getGameResult();
-					if (result == GameResult.STILLPLAYING){
-						updateLabel(result);
-					}
-					else {
-						JOptionPane.showMessageDialog(buttonPanel, dialogMessage(result));
+					if (result != GameResult.STILLPLAYING){
+						JOptionPane.showMessageDialog(buttonPanel, dialogMessage(result), "Game Over", JOptionPane.INFORMATION_MESSAGE);
 					}
 				}
 				else if (event.getSource() == Location10){
 					setMark(1, 0);
 					Location10.setText(getMark(1, 0));
 					result = getGameResult();
-					if (result == GameResult.STILLPLAYING){
-						updateLabel(result);
-					}
-					else {
-						JOptionPane.showMessageDialog(buttonPanel, dialogMessage(result));
+					if (result != GameResult.STILLPLAYING){
+						JOptionPane.showMessageDialog(buttonPanel, dialogMessage(result), "Game Over", JOptionPane.INFORMATION_MESSAGE);
 					}
 				}
 				else if (event.getSource() == Location11){
 					setMark(1, 1);
 					Location11.setText(getMark(1, 1));
 					result = getGameResult();
-					if (result == GameResult.STILLPLAYING){
-						updateLabel(result);
-					}
-					else {
-						JOptionPane.showMessageDialog(buttonPanel, dialogMessage(result));
+					if (result != GameResult.STILLPLAYING){
+						JOptionPane.showMessageDialog(buttonPanel, dialogMessage(result), "Game Over", JOptionPane.INFORMATION_MESSAGE);
 					}
 				}
 				else if (event.getSource() == Location12){
 					setMark(1, 2);
 					Location12.setText(getMark(1, 2));
 					result = getGameResult();
-					if (result == GameResult.STILLPLAYING){
-						updateLabel(result);
-					}
-					else {
-						JOptionPane.showMessageDialog(buttonPanel, dialogMessage(result));
+					if (result != GameResult.STILLPLAYING){
+						JOptionPane.showMessageDialog(buttonPanel, dialogMessage(result), "Game Over", JOptionPane.INFORMATION_MESSAGE);
 					}
 				}
 				else if (event.getSource() == Location20){
 					setMark(2, 0);
 					Location20.setText(getMark(2, 0));
 					result = getGameResult();
-					if (result == GameResult.STILLPLAYING){
-						updateLabel(result);
-					}
-					else {
-						JOptionPane.showMessageDialog(buttonPanel, dialogMessage(result));
+					if (result != GameResult.STILLPLAYING){
+						JOptionPane.showMessageDialog(buttonPanel, dialogMessage(result), "Game Over", JOptionPane.INFORMATION_MESSAGE);
 					}
 				}
 				else if (event.getSource() == Location21){
 					setMark(2, 1);
 					Location21.setText(getMark(2, 1));
 					result = getGameResult();
-					if (result == GameResult.STILLPLAYING){
-						updateLabel(result);
-					}
-					else {
-						JOptionPane.showMessageDialog(buttonPanel, dialogMessage(result));
+					if (result != GameResult.STILLPLAYING){
+						JOptionPane.showMessageDialog(buttonPanel, dialogMessage(result), "Game Over", JOptionPane.INFORMATION_MESSAGE);
 					}
 				}
 				else{
 					setMark(2,2);
 					Location22.setText(getMark(2, 2));
 					result = getGameResult();
-					if (result == GameResult.STILLPLAYING){
-						updateLabel(result);
-					}
-					else {
-						JOptionPane.showMessageDialog(buttonPanel, dialogMessage(result));
+					if (result != GameResult.STILLPLAYING){
+						JOptionPane.showMessageDialog(buttonPanel, dialogMessage(result), "Game Over", JOptionPane.INFORMATION_MESSAGE);
 					}
 				}
 			}

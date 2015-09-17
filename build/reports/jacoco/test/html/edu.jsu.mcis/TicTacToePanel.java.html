@@ -58,266 +58,226 @@ public class TicTacToePanel extends JPanel{
 <span class="fc" id="L58">		updateLabel(result);</span>
 <span class="fc" id="L59">	}</span>
 	
-	
 	private boolean gameWon(){
-<span class="fc" id="L63">		boolean result = false;</span>
-<span class="fc bfc" id="L64" title="All 2 branches covered.">		for (int row = 0; row &lt; 3; row++){</span>
-<span class="fc bfc" id="L65" title="All 6 branches covered.">			if (getMark(row, 0) == getMark(row, 1) &amp;&amp; getMark(row, 1) == getMark(row, 2) &amp;&amp;</span>
+<span class="fc" id="L62">		boolean result = false;</span>
+<span class="fc bfc" id="L63" title="All 2 branches covered.">		for (int row = 0; row &lt; 3; row++){</span>
+<span class="fc bfc" id="L64" title="All 6 branches covered.">			if (getMark(row, 0) == getMark(row, 1) &amp;&amp; getMark(row, 1) == getMark(row, 2) &amp;&amp;</span>
 				getMark(row, 0) != &quot; &quot;){
-<span class="fc" id="L67">				result = true;</span>
+<span class="fc" id="L66">				result = true;</span>
 			}
 		}
-<span class="fc bfc" id="L70" title="All 2 branches covered.">		for (int col = 0; col &lt; 3; col++){</span>
-<span class="pc bpc" id="L71" title="1 of 6 branches missed.">			if (getMark(0, col) == getMark(1, col) &amp;&amp; getMark(1, col) == getMark(2, col) &amp;&amp;</span>
+<span class="fc bfc" id="L69" title="All 2 branches covered.">		for (int col = 0; col &lt; 3; col++){</span>
+<span class="pc bpc" id="L70" title="1 of 6 branches missed.">			if (getMark(0, col) == getMark(1, col) &amp;&amp; getMark(1, col) == getMark(2, col) &amp;&amp;</span>
 				getMark(0, col) != &quot; &quot;){
-<span class="nc" id="L73">				result = true;</span>
+<span class="nc" id="L72">				result = true;</span>
 			}
 		}
-<span class="pc bpc" id="L76" title="1 of 6 branches missed.">		if (getMark(0, 0) == getMark(1, 1) &amp;&amp; getMark(1, 1) == getMark(2, 2) &amp;&amp; </span>
+<span class="pc bpc" id="L75" title="1 of 6 branches missed.">		if (getMark(0, 0) == getMark(1, 1) &amp;&amp; getMark(1, 1) == getMark(2, 2) &amp;&amp; </span>
 			getMark(0, 0) != &quot; &quot;){
-<span class="nc" id="L78">			result = true;</span>
+<span class="nc" id="L77">			result = true;</span>
 		}
-<span class="pc bpc" id="L80" title="1 of 6 branches missed.">		else if (getMark(2, 0) == getMark(1, 1) &amp;&amp; getMark(1, 1) == getMark(0, 2) &amp;&amp;</span>
+<span class="pc bpc" id="L79" title="1 of 6 branches missed.">		else if (getMark(2, 0) == getMark(1, 1) &amp;&amp; getMark(1, 1) == getMark(0, 2) &amp;&amp;</span>
 					getMark(2, 0) != &quot; &quot;){
-<span class="nc" id="L82">			result = true;</span>
+<span class="nc" id="L81">			result = true;</span>
 		}
-<span class="fc" id="L84">		return result;</span>
+<span class="fc" id="L83">		return result;</span>
 	}
 	
 	private boolean tieGame(){
-<span class="fc" id="L88">		boolean result = true;</span>
-<span class="pc bpc" id="L89" title="1 of 2 branches missed.">		if (gameWon() == false){</span>
-<span class="fc bfc" id="L90" title="All 2 branches covered.">			for (int row = 0; row &lt; 3; row++){</span>
-<span class="fc bfc" id="L91" title="All 2 branches covered.">				for (int col = 0; col &lt; 3; col++){</span>
-<span class="fc bfc" id="L92" title="All 2 branches covered.">					if (board[row][col] == Mark.EMPTY){</span>
-<span class="fc" id="L93">						result = false;</span>
+<span class="fc" id="L87">		boolean result = true;</span>
+<span class="pc bpc" id="L88" title="1 of 2 branches missed.">		if (gameWon() == false){</span>
+<span class="fc bfc" id="L89" title="All 2 branches covered.">			for (int row = 0; row &lt; 3; row++){</span>
+<span class="fc bfc" id="L90" title="All 2 branches covered.">				for (int col = 0; col &lt; 3; col++){</span>
+<span class="fc bfc" id="L91" title="All 2 branches covered.">					if (board[row][col] == Mark.EMPTY){</span>
+<span class="fc" id="L92">						result = false;</span>
 					}
 				}
 			}
 		}
-<span class="fc" id="L98">		return result;</span>
+<span class="fc" id="L97">		return result;</span>
 	}
 	
 	private boolean gameOver(){
 		boolean result;
-<span class="fc bfc" id="L103" title="All 2 branches covered.">		if (gameWon() == true){</span>
-<span class="fc" id="L104">			result = true;</span>
+<span class="fc bfc" id="L102" title="All 2 branches covered.">		if (gameWon() == true){</span>
+<span class="fc" id="L103">			result = true;</span>
 		}
-<span class="fc bfc" id="L106" title="All 2 branches covered.">		else if (tieGame() == true){</span>
-<span class="fc" id="L107">			result = true;</span>
+<span class="fc bfc" id="L105" title="All 2 branches covered.">		else if (tieGame() == true){</span>
+<span class="fc" id="L106">			result = true;</span>
 		}
 		else {
-<span class="fc" id="L110">			result = false;</span>
+<span class="fc" id="L109">			result = false;</span>
 		}
-<span class="fc" id="L112">		return result;</span>
+<span class="fc" id="L111">		return result;</span>
 	}
 	
 	public GameResult getGameResult(){
-<span class="fc" id="L116">		GameResult result = GameResult.STILLPLAYING;</span>
-<span class="fc bfc" id="L117" title="All 2 branches covered.">		if (gameOver() == true){</span>
-<span class="fc bfc" id="L118" title="All 2 branches covered.">			if (gameWon() == true){</span>
-<span class="pc bpc" id="L119" title="1 of 2 branches missed.">				if (moveCounter == 1){</span>
-<span class="fc" id="L120">					result = GameResult.XWIN;</span>
+<span class="fc" id="L115">		GameResult result = GameResult.STILLPLAYING;</span>
+<span class="fc bfc" id="L116" title="All 2 branches covered.">		if (gameOver() == true){</span>
+<span class="fc bfc" id="L117" title="All 2 branches covered.">			if (gameWon() == true){</span>
+<span class="pc bpc" id="L118" title="1 of 2 branches missed.">				if (moveCounter == 1){</span>
+<span class="fc" id="L119">					result = GameResult.XWIN;</span>
 				}
-<span class="nc" id="L122">				else {result = GameResult.OWIN;}</span>
+<span class="nc" id="L121">				else {result = GameResult.OWIN;}</span>
 			}
-<span class="pc bpc" id="L124" title="1 of 2 branches missed.">			else if(tieGame() == true){result = GameResult.TIE;}</span>
+<span class="pc bpc" id="L123" title="1 of 2 branches missed.">			else if(tieGame() == true){result = GameResult.TIE;}</span>
 			else{}
 		}
-<span class="fc" id="L127">		else {result = GameResult.STILLPLAYING;}</span>
+<span class="fc" id="L126">		else {result = GameResult.STILLPLAYING;}</span>
 		
-<span class="fc" id="L129">		return result;</span>
+<span class="fc" id="L128">		return result;</span>
 	}
 	
 	private void updateLabel(GameResult result){
-<span class="fc bfc" id="L133" title="All 2 branches covered.">		if(result == GameResult.STILLPLAYING){</span>
-<span class="fc bfc" id="L134" title="All 2 branches covered.">			if(moveCounter == 0){</span>
-<span class="fc" id="L135">				label.setText(&quot;Player X, place your mark.&quot;);</span>
+<span class="fc bfc" id="L132" title="All 2 branches covered.">		if(result == GameResult.STILLPLAYING){</span>
+<span class="fc bfc" id="L133" title="All 2 branches covered.">			if(moveCounter == 0){</span>
+<span class="fc" id="L134">				label.setText(&quot;Player X, place your mark.&quot;);</span>
 			}
 			else{
-<span class="fc" id="L138">				label.setText(&quot;Player 0, place your mark.&quot;);</span>
+<span class="fc" id="L137">				label.setText(&quot;Player 0, place your mark.&quot;);</span>
 			}
 		}
-		/*else if(result == GameResult.XWIN){
-			label.setText(&quot;Player X wins!&quot;);
-		}
-		else if(result == GameResult.OWIN){
-			label.setText(&quot;Player O wins!&quot;);
-		} 
-		else if(result == GameResult.TIE){
-			label.setText(&quot;TIE&quot;);
-		}
-		else{
-			label.setText(&quot;Error&quot;);
-		}*/
-<span class="fc" id="L153">	}</span>
+<span class="fc" id="L140">	}</span>
 	private String dialogMessage(GameResult result){
-<span class="nc" id="L155">		String message = &quot;&quot;;</span>
-<span class="nc bnc" id="L156" title="All 2 branches missed.">		if (result == GameResult.XWIN){</span>
-<span class="nc" id="L157">			message = &quot;The winner is X&quot;;</span>
+<span class="nc" id="L142">		String message = &quot;&quot;;</span>
+<span class="nc bnc" id="L143" title="All 2 branches missed.">		if (result == GameResult.XWIN){</span>
+<span class="nc" id="L144">			message = &quot;The winner is X&quot;;</span>
 		}
-<span class="nc bnc" id="L159" title="All 2 branches missed.">		else if (result == GameResult.OWIN){</span>
-<span class="nc" id="L160">			message = &quot;The winner is O&quot;;</span>
+<span class="nc bnc" id="L146" title="All 2 branches missed.">		else if (result == GameResult.OWIN){</span>
+<span class="nc" id="L147">			message = &quot;The winner is O&quot;;</span>
 		} 
-<span class="nc bnc" id="L162" title="All 2 branches missed.">		else if (result == GameResult.TIE){</span>
-<span class="nc" id="L163">			message = &quot;The winner is TIE&quot;;</span>
+<span class="nc bnc" id="L149" title="All 2 branches missed.">		else if (result == GameResult.TIE){</span>
+<span class="nc" id="L150">			message = &quot;The winner is TIE&quot;;</span>
 		}
 		else{
-<span class="nc" id="L166">			message = &quot;Error&quot;;</span>
+<span class="nc" id="L153">			message = &quot;Error&quot;;</span>
 		}
-<span class="nc" id="L168">		return message;</span>
+<span class="nc" id="L155">		return message;</span>
 	}	
 	
-<span class="fc" id="L171">	public TicTacToePanel(){</span>
-<span class="fc" id="L172">		TicTacToe();</span>
+<span class="fc" id="L158">	public TicTacToePanel(){</span>
+<span class="fc" id="L159">		TicTacToe();</span>
 		
-<span class="fc" id="L174">		Location00 = new JButton(getMark(0, 0));</span>
-<span class="fc" id="L175">		Location01 = new JButton(getMark(0, 1));</span>
-<span class="fc" id="L176">		Location02 = new JButton(getMark(0, 2));</span>
-<span class="fc" id="L177">		Location10 = new JButton(getMark(1, 0));</span>
-<span class="fc" id="L178">		Location11 = new JButton(getMark(1, 1));</span>
-<span class="fc" id="L179">		Location12 = new JButton(getMark(1, 2));</span>
-<span class="fc" id="L180">		Location20 = new JButton(getMark(2, 0));</span>
-<span class="fc" id="L181">		Location21 = new JButton(getMark(2, 1));</span>
-<span class="fc" id="L182">		Location22 = new JButton(getMark(2, 2));</span>
+<span class="fc" id="L161">		Location00 = new JButton(getMark(0, 0));</span>
+<span class="fc" id="L162">		Location01 = new JButton(getMark(0, 1));</span>
+<span class="fc" id="L163">		Location02 = new JButton(getMark(0, 2));</span>
+<span class="fc" id="L164">		Location10 = new JButton(getMark(1, 0));</span>
+<span class="fc" id="L165">		Location11 = new JButton(getMark(1, 1));</span>
+<span class="fc" id="L166">		Location12 = new JButton(getMark(1, 2));</span>
+<span class="fc" id="L167">		Location20 = new JButton(getMark(2, 0));</span>
+<span class="fc" id="L168">		Location21 = new JButton(getMark(2, 1));</span>
+<span class="fc" id="L169">		Location22 = new JButton(getMark(2, 2));</span>
 			
-<span class="fc" id="L184">		ButtonListener listener = new ButtonListener();</span>
-<span class="fc" id="L185">		Location00.addActionListener(listener);</span>
-<span class="fc" id="L186">		Location01.addActionListener(listener);</span>
-<span class="fc" id="L187">		Location02.addActionListener(listener);</span>
-<span class="fc" id="L188">		Location10.addActionListener(listener);</span>
-<span class="fc" id="L189">		Location11.addActionListener(listener);</span>
-<span class="fc" id="L190">		Location12.addActionListener(listener);</span>
-<span class="fc" id="L191">		Location20.addActionListener(listener);</span>
-<span class="fc" id="L192">		Location21.addActionListener(listener);</span>
-<span class="fc" id="L193">		Location22.addActionListener(listener);</span>
+<span class="fc" id="L171">		ButtonListener listener = new ButtonListener();</span>
+<span class="fc" id="L172">		Location00.addActionListener(listener);</span>
+<span class="fc" id="L173">		Location01.addActionListener(listener);</span>
+<span class="fc" id="L174">		Location02.addActionListener(listener);</span>
+<span class="fc" id="L175">		Location10.addActionListener(listener);</span>
+<span class="fc" id="L176">		Location11.addActionListener(listener);</span>
+<span class="fc" id="L177">		Location12.addActionListener(listener);</span>
+<span class="fc" id="L178">		Location20.addActionListener(listener);</span>
+<span class="fc" id="L179">		Location21.addActionListener(listener);</span>
+<span class="fc" id="L180">		Location22.addActionListener(listener);</span>
 			
-<span class="fc" id="L195">		label = new JLabel(&quot;Player X, place your mark.&quot;);</span>
+<span class="fc" id="L182">		label = new JLabel(&quot;Player X, place your mark.&quot;);</span>
 			
-<span class="fc" id="L197">		buttonPanel = new JPanel();</span>
-<span class="fc" id="L198">		buttonPanel.setLayout(new GridLayout(3, 3));</span>
-<span class="fc" id="L199">		buttonPanel.setPreferredSize(new Dimension(400, 400));</span>
-<span class="fc" id="L200">		buttonPanel.setBackground(Color.pink);</span>
-<span class="fc" id="L201">		buttonPanel.add(Location00);</span>
-<span class="fc" id="L202">		buttonPanel.add(Location01);</span>
-<span class="fc" id="L203">		buttonPanel.add(Location02);</span>
-<span class="fc" id="L204">		buttonPanel.add(Location10);</span>
-<span class="fc" id="L205">		buttonPanel.add(Location11);</span>
-<span class="fc" id="L206">		buttonPanel.add(Location12);</span>
-<span class="fc" id="L207">		buttonPanel.add(Location20);</span>
-<span class="fc" id="L208">		buttonPanel.add(Location21);</span>
-<span class="fc" id="L209">		buttonPanel.add(Location22);</span>
+<span class="fc" id="L184">		buttonPanel = new JPanel();</span>
+<span class="fc" id="L185">		buttonPanel.setLayout(new GridLayout(3, 3));</span>
+<span class="fc" id="L186">		buttonPanel.setPreferredSize(new Dimension(400, 400));</span>
+<span class="fc" id="L187">		buttonPanel.setBackground(Color.pink);</span>
+<span class="fc" id="L188">		buttonPanel.add(Location00);</span>
+<span class="fc" id="L189">		buttonPanel.add(Location01);</span>
+<span class="fc" id="L190">		buttonPanel.add(Location02);</span>
+<span class="fc" id="L191">		buttonPanel.add(Location10);</span>
+<span class="fc" id="L192">		buttonPanel.add(Location11);</span>
+<span class="fc" id="L193">		buttonPanel.add(Location12);</span>
+<span class="fc" id="L194">		buttonPanel.add(Location20);</span>
+<span class="fc" id="L195">		buttonPanel.add(Location21);</span>
+<span class="fc" id="L196">		buttonPanel.add(Location22);</span>
 			
-<span class="fc" id="L211">		setPreferredSize(new Dimension(400, 450));</span>
-<span class="fc" id="L212">		setBackground(Color.white);</span>
-<span class="fc" id="L213">		add(label);</span>
-<span class="fc" id="L214">		add(buttonPanel);</span>
-<span class="fc" id="L215">	}</span>
-<span class="fc" id="L216">	private class ButtonListener implements ActionListener{</span>
+<span class="fc" id="L198">		setPreferredSize(new Dimension(400, 450));</span>
+<span class="fc" id="L199">		setBackground(Color.white);</span>
+<span class="fc" id="L200">		add(label);</span>
+<span class="fc" id="L201">		add(buttonPanel);</span>
+<span class="fc" id="L202">	}</span>
+<span class="fc" id="L203">	private class ButtonListener implements ActionListener{</span>
 		public void actionPerformed(ActionEvent event){
-<span class="nc bnc" id="L218" title="All 2 branches missed.">			if(gameOver() == false){</span>
+<span class="nc bnc" id="L205" title="All 2 branches missed.">			if(gameOver() == false){</span>
 				GameResult result;
-<span class="nc bnc" id="L220" title="All 2 branches missed.">				if (event.getSource() == Location00){</span>
-<span class="nc" id="L221">					setMark(0, 0);</span>
-<span class="nc" id="L222">					Location00.setText(getMark(0, 0));</span>
-<span class="nc" id="L223">					result = getGameResult();</span>
-<span class="nc bnc" id="L224" title="All 2 branches missed.">					if (result == GameResult.STILLPLAYING){</span>
-						//updateLabel(result);
-					}
-					else {
-<span class="nc" id="L228">						JOptionPane.showMessageDialog(buttonPanel, dialogMessage(result));</span>
+<span class="nc bnc" id="L207" title="All 2 branches missed.">				if (event.getSource() == Location00){</span>
+<span class="nc" id="L208">					setMark(0, 0);</span>
+<span class="nc" id="L209">					Location00.setText(getMark(0, 0));</span>
+<span class="nc" id="L210">					result = getGameResult();</span>
+<span class="nc bnc" id="L211" title="All 2 branches missed.">					if (result != GameResult.STILLPLAYING){</span>
+<span class="nc" id="L212">						JOptionPane.showMessageDialog(buttonPanel, dialogMessage(result), &quot;Game Over&quot;, JOptionPane.INFORMATION_MESSAGE);</span>
 					}
 				}
-<span class="nc bnc" id="L231" title="All 2 branches missed.">				else if (event.getSource() == Location01){</span>
-<span class="nc" id="L232">					setMark(0, 1);</span>
-<span class="nc" id="L233">					Location01.setText(getMark(0, 1));</span>
+<span class="nc bnc" id="L215" title="All 2 branches missed.">				else if (event.getSource() == Location01){</span>
+<span class="nc" id="L216">					setMark(0, 1);</span>
+<span class="nc" id="L217">					Location01.setText(getMark(0, 1));</span>
+<span class="nc" id="L218">					result = getGameResult();</span>
+<span class="nc bnc" id="L219" title="All 2 branches missed.">					if (result != GameResult.STILLPLAYING){</span>
+<span class="nc" id="L220">						JOptionPane.showMessageDialog(buttonPanel, dialogMessage(result), &quot;Game Over&quot;, JOptionPane.INFORMATION_MESSAGE);</span>
+					}
+				}
+<span class="nc bnc" id="L223" title="All 2 branches missed.">				else if (event.getSource() == Location02){</span>
+<span class="nc" id="L224">					setMark(0, 2);</span>
+<span class="nc" id="L225">					Location02.setText(getMark(0, 2));</span>
+<span class="nc" id="L226">					result = getGameResult();</span>
+<span class="nc bnc" id="L227" title="All 2 branches missed.">					if (result != GameResult.STILLPLAYING){</span>
+<span class="nc" id="L228">						JOptionPane.showMessageDialog(buttonPanel, dialogMessage(result), &quot;Game Over&quot;, JOptionPane.INFORMATION_MESSAGE);</span>
+					}
+				}
+<span class="nc bnc" id="L231" title="All 2 branches missed.">				else if (event.getSource() == Location10){</span>
+<span class="nc" id="L232">					setMark(1, 0);</span>
+<span class="nc" id="L233">					Location10.setText(getMark(1, 0));</span>
 <span class="nc" id="L234">					result = getGameResult();</span>
-<span class="nc bnc" id="L235" title="All 2 branches missed.">					if (result == GameResult.STILLPLAYING){</span>
-<span class="nc" id="L236">						updateLabel(result);</span>
-					}
-					else {
-<span class="nc" id="L239">						JOptionPane.showMessageDialog(buttonPanel, dialogMessage(result));</span>
+<span class="nc bnc" id="L235" title="All 2 branches missed.">					if (result != GameResult.STILLPLAYING){</span>
+<span class="nc" id="L236">						JOptionPane.showMessageDialog(buttonPanel, dialogMessage(result), &quot;Game Over&quot;, JOptionPane.INFORMATION_MESSAGE);</span>
 					}
 				}
-<span class="nc bnc" id="L242" title="All 2 branches missed.">				else if (event.getSource() == Location02){</span>
-<span class="nc" id="L243">					setMark(0, 2);</span>
-<span class="nc" id="L244">					Location02.setText(getMark(0, 2));</span>
-<span class="nc" id="L245">					result = getGameResult();</span>
-<span class="nc bnc" id="L246" title="All 2 branches missed.">					if (result == GameResult.STILLPLAYING){</span>
-<span class="nc" id="L247">						updateLabel(result);</span>
-					}
-					else {
-<span class="nc" id="L250">						JOptionPane.showMessageDialog(buttonPanel, dialogMessage(result));</span>
+<span class="nc bnc" id="L239" title="All 2 branches missed.">				else if (event.getSource() == Location11){</span>
+<span class="nc" id="L240">					setMark(1, 1);</span>
+<span class="nc" id="L241">					Location11.setText(getMark(1, 1));</span>
+<span class="nc" id="L242">					result = getGameResult();</span>
+<span class="nc bnc" id="L243" title="All 2 branches missed.">					if (result != GameResult.STILLPLAYING){</span>
+<span class="nc" id="L244">						JOptionPane.showMessageDialog(buttonPanel, dialogMessage(result), &quot;Game Over&quot;, JOptionPane.INFORMATION_MESSAGE);</span>
 					}
 				}
-<span class="nc bnc" id="L253" title="All 2 branches missed.">				else if (event.getSource() == Location10){</span>
-<span class="nc" id="L254">					setMark(1, 0);</span>
-<span class="nc" id="L255">					Location10.setText(getMark(1, 0));</span>
-<span class="nc" id="L256">					result = getGameResult();</span>
-<span class="nc bnc" id="L257" title="All 2 branches missed.">					if (result == GameResult.STILLPLAYING){</span>
-<span class="nc" id="L258">						updateLabel(result);</span>
-					}
-					else {
-<span class="nc" id="L261">						JOptionPane.showMessageDialog(buttonPanel, dialogMessage(result));</span>
+<span class="nc bnc" id="L247" title="All 2 branches missed.">				else if (event.getSource() == Location12){</span>
+<span class="nc" id="L248">					setMark(1, 2);</span>
+<span class="nc" id="L249">					Location12.setText(getMark(1, 2));</span>
+<span class="nc" id="L250">					result = getGameResult();</span>
+<span class="nc bnc" id="L251" title="All 2 branches missed.">					if (result != GameResult.STILLPLAYING){</span>
+<span class="nc" id="L252">						JOptionPane.showMessageDialog(buttonPanel, dialogMessage(result), &quot;Game Over&quot;, JOptionPane.INFORMATION_MESSAGE);</span>
 					}
 				}
-<span class="nc bnc" id="L264" title="All 2 branches missed.">				else if (event.getSource() == Location11){</span>
-<span class="nc" id="L265">					setMark(1, 1);</span>
-<span class="nc" id="L266">					Location11.setText(getMark(1, 1));</span>
-<span class="nc" id="L267">					result = getGameResult();</span>
-<span class="nc bnc" id="L268" title="All 2 branches missed.">					if (result == GameResult.STILLPLAYING){</span>
-<span class="nc" id="L269">						updateLabel(result);</span>
-					}
-					else {
-<span class="nc" id="L272">						JOptionPane.showMessageDialog(buttonPanel, dialogMessage(result));</span>
+<span class="nc bnc" id="L255" title="All 2 branches missed.">				else if (event.getSource() == Location20){</span>
+<span class="nc" id="L256">					setMark(2, 0);</span>
+<span class="nc" id="L257">					Location20.setText(getMark(2, 0));</span>
+<span class="nc" id="L258">					result = getGameResult();</span>
+<span class="nc bnc" id="L259" title="All 2 branches missed.">					if (result != GameResult.STILLPLAYING){</span>
+<span class="nc" id="L260">						JOptionPane.showMessageDialog(buttonPanel, dialogMessage(result), &quot;Game Over&quot;, JOptionPane.INFORMATION_MESSAGE);</span>
 					}
 				}
-<span class="nc bnc" id="L275" title="All 2 branches missed.">				else if (event.getSource() == Location12){</span>
-<span class="nc" id="L276">					setMark(1, 2);</span>
-<span class="nc" id="L277">					Location12.setText(getMark(1, 2));</span>
-<span class="nc" id="L278">					result = getGameResult();</span>
-<span class="nc bnc" id="L279" title="All 2 branches missed.">					if (result == GameResult.STILLPLAYING){</span>
-<span class="nc" id="L280">						updateLabel(result);</span>
-					}
-					else {
-<span class="nc" id="L283">						JOptionPane.showMessageDialog(buttonPanel, dialogMessage(result));</span>
-					}
-				}
-<span class="nc bnc" id="L286" title="All 2 branches missed.">				else if (event.getSource() == Location20){</span>
-<span class="nc" id="L287">					setMark(2, 0);</span>
-<span class="nc" id="L288">					Location20.setText(getMark(2, 0));</span>
-<span class="nc" id="L289">					result = getGameResult();</span>
-<span class="nc bnc" id="L290" title="All 2 branches missed.">					if (result == GameResult.STILLPLAYING){</span>
-<span class="nc" id="L291">						updateLabel(result);</span>
-					}
-					else {
-<span class="nc" id="L294">						JOptionPane.showMessageDialog(buttonPanel, dialogMessage(result));</span>
-					}
-				}
-<span class="nc bnc" id="L297" title="All 2 branches missed.">				else if (event.getSource() == Location21){</span>
-<span class="nc" id="L298">					setMark(2, 1);</span>
-<span class="nc" id="L299">					Location21.setText(getMark(2, 1));</span>
-<span class="nc" id="L300">					result = getGameResult();</span>
-<span class="nc bnc" id="L301" title="All 2 branches missed.">					if (result == GameResult.STILLPLAYING){</span>
-<span class="nc" id="L302">						updateLabel(result);</span>
-					}
-					else {
-<span class="nc" id="L305">						JOptionPane.showMessageDialog(buttonPanel, dialogMessage(result));</span>
+<span class="nc bnc" id="L263" title="All 2 branches missed.">				else if (event.getSource() == Location21){</span>
+<span class="nc" id="L264">					setMark(2, 1);</span>
+<span class="nc" id="L265">					Location21.setText(getMark(2, 1));</span>
+<span class="nc" id="L266">					result = getGameResult();</span>
+<span class="nc bnc" id="L267" title="All 2 branches missed.">					if (result != GameResult.STILLPLAYING){</span>
+<span class="nc" id="L268">						JOptionPane.showMessageDialog(buttonPanel, dialogMessage(result), &quot;Game Over&quot;, JOptionPane.INFORMATION_MESSAGE);</span>
 					}
 				}
 				else{
-<span class="nc" id="L309">					setMark(2,2);</span>
-<span class="nc" id="L310">					Location22.setText(getMark(2, 2));</span>
-<span class="nc" id="L311">					result = getGameResult();</span>
-<span class="nc bnc" id="L312" title="All 2 branches missed.">					if (result == GameResult.STILLPLAYING){</span>
-<span class="nc" id="L313">						updateLabel(result);</span>
-					}
-					else {
-<span class="nc" id="L316">						JOptionPane.showMessageDialog(buttonPanel, dialogMessage(result));</span>
+<span class="nc" id="L272">					setMark(2,2);</span>
+<span class="nc" id="L273">					Location22.setText(getMark(2, 2));</span>
+<span class="nc" id="L274">					result = getGameResult();</span>
+<span class="nc bnc" id="L275" title="All 2 branches missed.">					if (result != GameResult.STILLPLAYING){</span>
+<span class="nc" id="L276">						JOptionPane.showMessageDialog(buttonPanel, dialogMessage(result), &quot;Game Over&quot;, JOptionPane.INFORMATION_MESSAGE);</span>
 					}
 				}
 			}
-<span class="nc" id="L320">		}</span>
+<span class="nc" id="L280">		}</span>
 	}
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.1.201405082137</span></div></body></html>

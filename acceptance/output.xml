@@ -1,46 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 2.9 (Jython 2.7.0 on java1.7.0_65)" generated="20150916 17:20:46.307">
+<robot generator="Robot 2.9 (Jython 2.7.0 on java1.7.0_65)" generated="20150916 22:44:53.848">
 <suite source="/Users/katiewood/Documents/TicTacToe_KW/acceptance/TicTacToeGUITests.txt" id="s1" name="TicTacToeGUITests">
 <test id="s1-t1" name="Win Diagonally as X">
 <kw name="Start New Game">
-<kw name="Start Application">
+<kw library="SwingLibrary" name="Start Application">
+<doc>Alias for `Launch Application` keyword</doc>
 <arguments>
 <arg>edu.jsu.mcis.TicTacToeGame</arg>
 </arguments>
-<msg timestamp="20150916 17:20:47.022" level="FAIL">No keyword with name 'Start Application' found.</msg>
-<status status="FAIL" starttime="20150916 17:20:47.018" endtime="20150916 17:20:47.025"></status>
+<msg timestamp="20150916 22:44:55.814" level="FAIL">edu.jsu.mcis.TicTacToeGame</msg>
+<status status="FAIL" starttime="20150916 22:44:55.784" endtime="20150916 22:44:55.815"></status>
 </kw>
-<status status="FAIL" starttime="20150916 17:20:46.947" endtime="20150916 17:20:47.028"></status>
+<status status="FAIL" starttime="20150916 22:44:55.778" endtime="20150916 22:44:55.818"></status>
 </kw>
-<status status="FAIL" starttime="20150916 17:20:46.936" endtime="20150916 17:20:47.034" critical="yes">No keyword with name 'Start Application' found.</status>
+<status status="FAIL" starttime="20150916 22:44:55.772" endtime="20150916 22:44:55.821" critical="yes">edu.jsu.mcis.TicTacToeGame</status>
 </test>
 <test id="s1-t2" name="Win Horizontally as O">
 <kw name="Start New Game">
-<kw name="Start Application">
+<kw library="SwingLibrary" name="Start Application">
+<doc>Alias for `Launch Application` keyword</doc>
 <arguments>
 <arg>edu.jsu.mcis.TicTacToeGame</arg>
 </arguments>
-<msg timestamp="20150916 17:20:47.113" level="FAIL">No keyword with name 'Start Application' found.</msg>
-<status status="FAIL" starttime="20150916 17:20:47.111" endtime="20150916 17:20:47.114"></status>
+<msg timestamp="20150916 22:44:55.857" level="FAIL">edu.jsu.mcis.TicTacToeGame</msg>
+<status status="FAIL" starttime="20150916 22:44:55.832" endtime="20150916 22:44:55.859"></status>
 </kw>
-<status status="FAIL" starttime="20150916 17:20:47.049" endtime="20150916 17:20:47.117"></status>
+<status status="FAIL" starttime="20150916 22:44:55.828" endtime="20150916 22:44:55.862"></status>
 </kw>
-<status status="FAIL" starttime="20150916 17:20:47.039" endtime="20150916 17:20:47.120" critical="yes">No keyword with name 'Start Application' found.</status>
+<status status="FAIL" starttime="20150916 22:44:55.824" endtime="20150916 22:44:55.865" critical="yes">edu.jsu.mcis.TicTacToeGame</status>
 </test>
 <test id="s1-t3" name="Force a Tie">
 <kw name="Start New Game">
-<kw name="Start Application">
+<kw library="SwingLibrary" name="Start Application">
+<doc>Alias for `Launch Application` keyword</doc>
 <arguments>
 <arg>edu.jsu.mcis.TicTacToeGame</arg>
 </arguments>
-<msg timestamp="20150916 17:20:47.177" level="FAIL">No keyword with name 'Start Application' found.</msg>
-<status status="FAIL" starttime="20150916 17:20:47.175" endtime="20150916 17:20:47.179"></status>
+<msg timestamp="20150916 22:44:55.901" level="FAIL">edu.jsu.mcis.TicTacToeGame</msg>
+<status status="FAIL" starttime="20150916 22:44:55.877" endtime="20150916 22:44:55.903"></status>
 </kw>
-<status status="FAIL" starttime="20150916 17:20:47.134" endtime="20150916 17:20:47.181"></status>
+<status status="FAIL" starttime="20150916 22:44:55.873" endtime="20150916 22:44:55.905"></status>
 </kw>
-<status status="FAIL" starttime="20150916 17:20:47.124" endtime="20150916 17:20:47.184" critical="yes">No keyword with name 'Start Application' found.</status>
+<status status="FAIL" starttime="20150916 22:44:55.869" endtime="20150916 22:44:55.907" critical="yes">edu.jsu.mcis.TicTacToeGame</status>
 </test>
-<status status="FAIL" starttime="20150916 17:20:46.330" endtime="20150916 17:20:47.194"></status>
+<status status="FAIL" starttime="20150916 22:44:53.884" endtime="20150916 22:44:55.913"></status>
 </suite>
 <statistics>
 <total>
@@ -54,17 +57,5 @@
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20150916 17:20:46.924" level="ERROR">Error in file '/Users/katiewood/Documents/TicTacToe_KW/acceptance/TicTacToeGUITests.txt': Importing test library 'SwingLibrary' failed: ImportError: No module named SwingLibrary
-Traceback (most recent call last):
-  None
-PYTHONPATH:
-  /Users/katiewood/Documents/CS310Programs/Lib
-  /Users/katiewood/Documents/CS310Programs/robotframework-2.9.jar/Lib
-  __classpath__
-  __pyclasspath__/
-CLASSPATH:
-  .
-  ../build/classes/main
-  /Users/katiewood/Documents/CS310Programs/robotframework-2.9.jar</msg>
 </errors>
 </robot>
